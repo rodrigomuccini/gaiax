@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Squad GAIA · o time de agentes de IA que opera a sua empresa 24/7</title>
+<meta name="description" content="Um time completo de agentes de IA (Claude + ChatGPT) implantado na sua empresa: atende no WhatsApp, faz seus sites, cria imagens e gerencia seus produtos. Chega com CRM e ERP próprios, operados pela própria IA.">
+<meta name="theme-color" content="#070b10">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%230c141c%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-size=%2720%27 text-anchor=%27middle%27 fill=%27%23a8dcff%27 font-family=%27sans-serif%27%3EG%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="font" type="font/woff2" href="fonts/redhatdisplay-300-latin.woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="preload" as="image" href="img/room.webp">
+<link rel="stylesheet" href="css/gaia.css">
+</head>
+<body>
+<a class="skip" href="#plataforma">Pular para o conteúdo</a>
+
+<div class="glove" aria-hidden="true"><span class="glove-ring"></span><span class="glove-dot"></span></div>
+<canvas class="glove-trail" aria-hidden="true"></canvas>
+
+<header class="top" id="top">
+  <a class="wordmark" href="#hero" aria-label="GAIA, início"><b>GAIA</b><span>· Gestão Avançada de Inteligência Artificial</span></a>
+  <nav class="topnav" aria-label="Seções">
+    <a href="#plataforma">Solução</a>
+    <a href="#equipe">Agentes</a>
+    <a href="#ia-vs-humano">Comparativo</a>
+    <a href="#crm">Plataforma</a>
+    <a href="#custo">Custo</a>
+    <a href="#oferta">Implantação</a>
+  </nav>
+  <a class="top-cta" href="#oferta">Implantar</a>
+</header>
+
+<nav class="rail" aria-label="Linha de navegação">
+  <ol>
+    <li><a href="#hero" data-rail="hero"><span>Parede</span></a></li>
+    <li><a href="#plataforma" data-rail="plataforma"><span>Você não contrata software</span></a></li>
+    <li><a href="#equipe" data-rail="equipe"><span>O squad</span></a></li>
+    <li><a href="#capta" data-rail="capta"><span>A operação inteira pronta</span></a></li>
+    <li><a href="#chefe" data-rail="chefe"><span>A IA no comando</span></a></li>
+    <li><a href="#criacao" data-rail="criacao"><span>Criação sem parar</span></a></li>
+    <li><a href="#ia-vs-humano" data-rail="ia-vs-humano"><span>Função por função</span></a></li>
+    <li><a href="#crm" data-rail="crm"><span>O artefato que vem junto</span></a></li>
+    <li><a href="#automacao" data-rail="automacao"><span>Automação por dentro</span></a></li>
+    <li><a href="#webinar" data-rail="webinar"><span>Webinar nativo</span></a></li>
+    <li><a href="#erp" data-rail="erp"><span>Gestão interna operada pela IA</span></a></li>
+    <li><a href="#custo" data-rail="custo"><span>O custo de fazer sozinho</span></a></li>
+    <li><a href="#perfis" data-rail="perfis"><span>Três tipos de negócio</span></a></li>
+    <li><a href="#oferta" data-rail="oferta"><span>Implantação · contrato de 1 ano</span></a></li>
+  </ol>
+</nav>
+
+<main>
+
+<!-- ============ HERO: a parede de vidro ============ -->
+<section class="hero" id="hero" aria-labelledby="hero-title">
+  <div class="hero-frame">
+    <img class="hero-room" src="img/room.webp" alt="" width="1920" height="1080" fetchpriority="high">
+    <p class="hero-side mono" aria-hidden="true">Pessoas<br>Inteligência artificial<br>Operação 24/7</p>
+    <h1 class="hero-title" id="hero-title" data-decode-line>Claude e ChatGPT, dentro de um time completo<br class="br-wide"> de agentes que opera a sua empresa 24&nbsp;horas por dia.</h1>
+    <a class="btn btn-signal hero-cta" href="#oferta">Implantar o squad <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+
+    <div class="wall" id="wall" aria-roledescription="carrossel" aria-label="Os agentes do squad. Arraste para os lados ou use as setas.">
+      <div class="wall-arc" aria-hidden="true"></div>
+      <ul class="wall-track" id="wallTrack">
+        <li class="agent" data-agent="juliana"><button type="button" aria-haspopup="dialog">
+          <span class="agent-id mono">01</span><img src="img/agent-1.webp" alt="" width="300" height="505">
+          <span class="agent-body"><b class="agent-name">Juliana</b><span class="agent-role">Produção &amp; Design</span><span class="agent-on mono">Online</span><span class="agent-task" data-tasks="Montando a landing page da campanha|Padronizando os criativos da semana|Revisando o layout do Instagram">Montando a landing page da campanha</span><span class="agent-wave" aria-hidden="true"></span><span class="agent-foot mono">Agente ativo <svg class="ico" viewBox="0 0 20 20"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span></span>
+        </button></li>
+        <li class="agent" data-agent="rafael"><button type="button" aria-haspopup="dialog">
+          <span class="agent-id mono">02</span><img src="img/agent-2.webp" alt="" width="303" height="440">
+          <span class="agent-body"><b class="agent-name">Rafael</b><span class="agent-role">Gestor de projetos</span><span class="agent-on mono">Online</span><span class="agent-task" data-tasks="Priorizando as entregas da semana|Dividindo a estratégia em etapas|Liberando o gargalo do design">Priorizando as entregas da semana</span><span class="agent-wave" aria-hidden="true"></span><span class="agent-foot mono">Agente ativo <svg class="ico" viewBox="0 0 20 20"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span></span>
+        </button></li>
+        <li class="agent" data-agent="gaia"><button type="button" aria-haspopup="dialog">
+          <span class="agent-id mono">03</span><img src="img/agent-gaia.webp" alt="" width="360" height="440">
+          <span class="agent-body"><b class="agent-name">GAIA</b><span class="agent-role">Orquestradora</span><span class="agent-on mono">Online</span><span class="agent-task" data-tasks="Coordenando fluxos e prioridades em tempo real|Distribuindo o pedido ao especialista certo|Validando a entrega antes de te devolver">Coordenando fluxos e prioridades em tempo real</span><span class="agent-wave" aria-hidden="true"></span><span class="agent-foot mono">Agente ativo <svg class="ico" viewBox="0 0 20 20"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span></span>
+        </button></li>
+        <li class="agent" data-agent="clone"><button type="button" aria-haspopup="dialog">
+          <span class="agent-id mono">04</span><img src="img/agent-4.webp" alt="" width="295" height="440">
+          <span class="agent-body"><b class="agent-name">Clone do Rodrigo</b><span class="agent-role">Desenvolvedor full-stack</span><span class="agent-on mono">Online</span><span class="agent-task" data-tasks="Publicando o site novo|Integrando o WhatsApp ao CRM|Testando a automação ponta a ponta">Publicando o site novo</span><span class="agent-wave" aria-hidden="true"></span><span class="agent-foot mono">Agente ativo <svg class="ico" viewBox="0 0 20 20"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span></span>
+        </button></li>
+        <li class="agent" data-agent="jonathan"><button type="button" aria-haspopup="dialog">
+          <span class="agent-id mono">05</span><img src="img/agent-5.webp" alt="" width="289" height="440">
+          <span class="agent-body"><b class="agent-name">Jonathan</b><span class="agent-role">Copywriter &amp; pesquisa</span><span class="agent-on mono">Online</span><span class="agent-task" data-tasks="Escrevendo a página de vendas|Roteirizando os anúncios em Reels|Pesquisando referências do nicho">Escrevendo a página de vendas</span><span class="agent-wave" aria-hidden="true"></span><span class="agent-foot mono">Agente ativo <svg class="ico" viewBox="0 0 20 20"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span></span>
+        </button></li>
+        <li class="agent" data-agent="paulo"><button type="button" aria-haspopup="dialog">
+          <span class="agent-id mono">06</span><img src="img/agent-6.webp" alt="" width="307" height="440">
+          <span class="agent-body"><b class="agent-name">Paulo</b><span class="agent-role">Gestor de tráfego</span><span class="agent-on mono">Online</span><span class="agent-task" data-tasks="Otimizando o custo por lead|Montando os públicos da campanha|Subindo os criativos novos">Otimizando o custo por lead</span><span class="agent-wave" aria-hidden="true"></span><span class="agent-foot mono">Agente ativo <svg class="ico" viewBox="0 0 20 20"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span></span>
+        </button></li>
+        <li class="agent" data-agent="davi"><button type="button" aria-haspopup="dialog">
+          <span class="agent-id mono">07</span><img src="img/agent-7.webp" alt="" width="346" height="440">
+          <span class="agent-body"><b class="agent-name">Davi</b><span class="agent-role">SDR · vendas no WhatsApp</span><span class="agent-on mono">Online</span><span class="agent-task" data-tasks="Qualificando leads no WhatsApp|Respondendo objeções|Agendando a reunião no calendário">Qualificando leads no WhatsApp</span><span class="agent-wave" aria-hidden="true"></span><span class="agent-foot mono">Agente ativo <svg class="ico" viewBox="0 0 20 20"><path d="M3 10h13M11 5l5 5-5 5"/></svg></span></span>
+        </button></li>
+      </ul>
+    </div>
+
+    <img class="hero-rodrigo" src="img/rodrigo.webp" alt="Rodrigo Muccini arrastando os painéis dos agentes na parede de vidro" width="1024" height="1536">
+
+    <p class="hero-foot hero-foot-l mono">Um squad de agentes<br>para cada área da sua empresa</p>
+    <p class="hero-foot hero-foot-c mono" aria-hidden="true"><span>Planejar</span><span>Executar</span><span>Acompanhar</span><span>Escalar</span></p>
+    <p class="hero-foot hero-foot-r mono">24 horas por dia<br>7 dias por semana<br>Resultados sem interrupção</p>
+  </div>
+</section>
+
+<!-- ============ VOCÊ NÃO CONTRATA SOFTWARE ============ -->
+<section class="sec" id="plataforma" aria-labelledby="plat-title">
+  <div class="wrap">
+    <div class="plat-head">
+      <h2 class="h-xl" id="plat-title" data-ply>Você não contrata mais um software. Você implanta <em>um time inteiro</em>.</h2>
+      <div class="plat-lead" data-ply>
+        <p class="lead">O time faz seus sites, cria suas imagens, atende seus clientes no WhatsApp, gerencia sua carteira de produtos e cria novas esteiras. E ainda chega com <b>CRM e ERP próprios</b>, operados pela própria IA.</p>
+        <ul class="chips" aria-label="O que o time faz">
+          <li>Atende no WhatsApp</li><li>Faz seus sites</li><li>Cria suas imagens</li><li>Gerencia seus produtos</li><li>Cria novas esteiras</li>
+        </ul>
+        <p class="body-muted">Pare de montar sua operação juntando gente, agência e oito assinaturas que não conversam entre si. O Squad GAIA entra na sua empresa e assume vendas, criação e gestão, com CRM e ERP próprios que a própria IA opera. Menos contratação, menos fatura, mais coisa acontecendo.</p>
+        <div class="actions">
+          <a class="btn btn-signal" href="#oferta">Quero implantar o squad <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+          <a class="btn btn-glass" href="#custo">Ver quanto posso economizar</a>
+        </div>
+      </div>
+    </div>
+
+    <ol class="index" aria-label="As quatro frentes do squad">
+      <li data-ply><a href="#capta"><span class="ix-code mono">VND</span><b>Vendas &amp; atendimento</b><span>SDR de IA nos 6 canais: qualifica o lead, agenda a call e faz o follow-up até o pagamento, sem você levantar um dedo.</span><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></li>
+      <li data-ply><a href="#criacao"><span class="ix-code mono">CRI</span><b>Criação sem fila</b><span>Sites, imagens, copy e carrossel, tudo produzido pelo próprio squad no mesmo dia.</span><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></li>
+      <li data-ply><a href="#crm"><span class="ix-code mono">CRM</span><b>CRM Muccini Digital</b><span>O artefato que vem junto: o funil que a própria IA administra por você.</span><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></li>
+      <li data-ply><a href="#erp"><span class="ix-code mono">ERP</span><b>ERP de gestão</b><span>Financeiro, time e o miolo da empresa organizados num painel só, preenchido pela própria IA.</span><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ O SQUAD ============ -->
+<section class="sec sec-deep" id="equipe" aria-labelledby="eq-title">
+  <div class="wrap eq">
+    <div class="eq-copy">
+      <h2 class="h-xl" id="eq-title" data-ply>Conheça a <em>GAIA</em> e o squad que opera com você.</h2>
+      <p class="lead" data-ply>O mesmo time de agentes autônomos que roda a operação da Muccini Digital é implantado dentro da sua empresa: coordenação, código, copy, design, tráfego e vendas, cada função com um agente especialista treinado, trabalhando 24 horas por dia. Não falta, não atrasa, não fica doente e não tira férias.</p>
+      <ul class="roster" data-ply aria-label="Especialistas do squad">
+        <li><button type="button" data-open="juliana" aria-haspopup="dialog"><img src="img/agent-1.webp" alt="" width="300" height="505"><b>Juliana</b><span>Produção &amp; Design</span></button></li>
+        <li><button type="button" data-open="rafael" aria-haspopup="dialog"><img src="img/agent-2.webp" alt="" width="303" height="440"><b>Rafael</b><span>Gestor de projetos</span></button></li>
+        <li><button type="button" data-open="clone" aria-haspopup="dialog"><img src="img/agent-4.webp" alt="" width="295" height="440"><b>Clone do Rodrigo</b><span>Desenvolvedor full-stack</span></button></li>
+        <li><button type="button" data-open="jonathan" aria-haspopup="dialog"><img src="img/agent-5.webp" alt="" width="289" height="440"><b>Jonathan</b><span>Copywriter &amp; pesquisa</span></button></li>
+        <li><button type="button" data-open="paulo" aria-haspopup="dialog"><img src="img/agent-6.webp" alt="" width="307" height="440"><b>Paulo</b><span>Gestor de tráfego</span></button></li>
+        <li><button type="button" data-open="davi" aria-haspopup="dialog"><img src="img/agent-7.webp" alt="" width="346" height="440"><b>Davi</b><span>SDR · vendas WhatsApp</span></button></li>
+      </ul>
+      <div class="sdr" data-ply>
+        <p><b class="sdr-n mono" data-decode>+6</b> agentes SDR de vendas para atendimento de leads e suporte, que se conectam ao seu WhatsApp, Instagram, TikTok, Telegram e site.</p>
+        <ul class="chips chips-sm"><li>WhatsApp</li><li>Instagram</li><li>TikTok</li><li>Telegram</li><li>Site</li></ul>
+      </div>
+    </div>
+    <button type="button" class="gaia-card ply" data-open="gaia" data-ply aria-haspopup="dialog">
+      <img src="img/gaia-full.webp" alt="GAIA, a agente orquestradora" width="376" height="505">
+      <span class="gaia-card-body">
+        <b>GAIA.</b>
+        <span class="mono gaia-card-tag">Agente central · toque para o dossiê</span>
+        <span>Coordena todo o time. Recebe a estratégia, distribui as tarefas entre os especialistas, garante a consistência e devolve a entrega pronta. É o cérebro que orquestra o squad e fala com você.</span>
+      </span>
+    </button>
+  </div>
+</section>
+
+<!-- ============ A OPERAÇÃO INTEIRA PRONTA ============ -->
+<section class="sec" id="capta" aria-labelledby="capta-title">
+  <div class="wrap duo">
+    <div class="duo-txt">
+      <h2 class="h-lg" id="capta-title" data-ply>O squad implantado <em>capta</em>, <em>conversa</em> e <em>converte</em> leads em venda.</h2>
+      <p class="lead" data-ply>O squad não te entrega só uma ferramenta. É um <b>time inteiro de inteligência artificial</b> instalado e rodando na sua empresa, que capta, conversa e converte leads em venda, e que <b>opera o próprio CRM por você</b>. A IA preenche o funil, move o card, dispara o follow-up e fecha. Você não administra a plataforma: o squad administra.</p>
+      <ul class="checks" data-ply>
+        <li><b>Captação:</b> prospecção ativa no Instagram, Google e LinkedIn, sem você levantar um dedo.</li>
+        <li><b>Conversa:</b> SDR de IA atende 24/7 nos 6 canais, qualifica e agenda na hora.</li>
+        <li><b>Conversão:</b> follow-up infinito até o pagamento, nada esfria, nada se perde.</li>
+        <li><b>Organização:</b> o CRM se gerencia sozinho, a IA atualiza pipeline, tags e histórico.</li>
+      </ul>
+      <div class="actions" data-ply><a class="btn btn-signal" href="#oferta">Quero o squad implantado <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></div>
+    </div>
+    <figure class="frame" data-ply>
+      <img src="img/funil.webp" alt="Rodrigo e GAIA movendo um lead pelas colunas do funil na parede de vidro" width="1536" height="1024" loading="lazy">
+      <figcaption class="callout" style="--cx:23%;--cy:37%;--lx:3%;--ly:76%"><span class="mono">Squad em operação</span>Capta, conversa, converte e administra o CRM por você, 24 horas por dia.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec sec-deep" id="chefe" aria-labelledby="chefe-title">
+  <div class="wrap duo duo-rev">
+    <div class="duo-txt">
+      <h2 class="h-lg" id="chefe-title" data-ply>A IA atua <em>no lugar do Chefe</em> e até no lugar do time humano.</h2>
+      <p class="lead" data-ply>Time humano é caro, falta, adoece, tira férias, pede aumento e roda de emprego. O squad <b>não falta, não atrasa, não fica doente, não precisa de férias</b> e escala de forma infinita. Você troca uma folha de pagamento inteira por uma estrutura que responde em segundos, atende mil leads ao mesmo tempo e nunca dorme, tudo gerenciado pela própria IA, do primeiro "oi" ao pagamento.</p>
+      <ul class="chips" data-ply><li>A IA atua no lugar do Chefe</li><li>Substitui o time humano</li><li>Mais barato · mais eficiente</li><li>24/7 sem pausa</li><li>Resposta instantânea</li><li>Zero turnover</li><li>Escala infinita</li></ul>
+    </div>
+    <figure class="frame frame-tall" data-ply>
+      <img src="img/orquestra.webp" alt="GAIA regendo com as mãos uma constelação de painéis de vidro" width="1122" height="1402" loading="lazy">
+      <figcaption class="callout" style="--cx:90%;--cy:29%;--lx:50%;--ly:3%"><span class="mono">GAIA · orquestradora</span>Recebe a estratégia, distribui as tarefas e garante a execução. Memória que nunca esquece.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="criacao" aria-labelledby="cri-title">
+  <div class="wrap duo">
+    <div class="duo-txt">
+      <h2 class="h-lg" id="cri-title" data-ply>O squad faz o <em>site</em>, o criativo e o <em>vídeo</em> no mesmo dia.</h2>
+      <p class="lead" data-ply>O squad faz o site, o criativo, o vídeo, o carrossel e a esteira nova de produto, no mesmo dia, sem fila de agência. O que hoje demora uma semana e passa por três fornecedores sai numa tarde, com a sua identidade e no seu tom.</p>
+      <ul class="chips" data-ply><li>Sites &amp; landing pages</li><li>Imagens &amp; criativos</li><li>Novas esteiras de produto</li></ul>
+      <div class="actions" data-ply><a class="btn btn-signal" href="#oferta">Quero criação sem fila <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></div>
+    </div>
+    <figure class="frame" data-ply>
+      <img src="img/criacao.webp" alt="GAIA organizando layouts de site, fotos e uma linha do tempo de vídeo na parede de vidro" width="1536" height="1024" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<!-- ============ FUNÇÃO POR FUNÇÃO ============ -->
+<section class="sec sec-deep" id="ia-vs-humano" aria-labelledby="cmp-title">
+  <div class="wrap">
+    <div class="cmp-head">
+      <h2 class="h-xl" id="cmp-title" data-ply>Cada cargo do seu time, <em>substituído</em> por um agente que custa uma fração.</h2>
+      <p class="lead" data-ply>Cada função que hoje você contrata, treina e paga todo mês tem um agente GAIA equivalente, já incluso na implantação. Mesmo trabalho, sem folha de pagamento, sem encargos, sem turnover. Compare cargo a cargo.</p>
+    </div>
+
+    <div class="ledger ply" data-ply role="table" aria-label="Comparação cargo a cargo">
+      <div class="lg-row lg-head mono" role="row"><span role="columnheader">Função</span><span role="columnheader">Humano</span><span role="columnheader">Agente GAIA</span><span role="columnheader">Economia</span></div>
+      <div class="lg-row" role="row"><span role="cell"><b>Vendas</b><small>SDR / atendente</small></span><span role="cell"><s>R$ 3.000<small>/mês</small></s></span><span role="cell" class="lg-agent"><img src="img/agent-7.webp" alt="" width="346" height="440">Davi <i>incluso</i></span><span role="cell" class="lg-save mono">≈ R$ 3.000/mês</span><p class="lg-note"><b>24/7 · resposta instantânea.</b> Atende e qualifica leads nos 6 canais ao mesmo tempo. Não tira férias, não falta na segunda, não roda de emprego.</p></div>
+      <div class="lg-row" role="row"><span role="cell"><b>Conteúdo</b><small>Social media</small></span><span role="cell"><s>R$ 2.500<small>/mês</small></s></span><span role="cell" class="lg-agent"><img src="img/agent-1.webp" alt="" width="300" height="505">Juliana <i>inclusa</i></span><span role="cell" class="lg-save mono">≈ R$ 2.500/mês</span><p class="lg-note"><b>Produção contínua.</b> Carrosséis, posts e calendário sempre no ar. Escala de conteúdo sem contratar uma equipe de social inteira.</p></div>
+      <div class="lg-row" role="row"><span role="cell"><b>Copy</b><small>Copywriter sênior</small></span><span role="cell"><s>R$ 4.000<small>/mês</small></s></span><span role="cell" class="lg-agent"><img src="img/agent-5.webp" alt="" width="289" height="440">Jonathan <i>incluso</i></span><span role="cell" class="lg-save mono">≈ R$ 4.000/mês</span><p class="lg-note"><b>Tom calibrado para venda.</b> Headlines, anúncios, e-mails e roteiros na hora.</p></div>
+      <div class="lg-row" role="row"><span role="cell"><b>Design</b><small>Designer</small></span><span role="cell"><s>R$ 3.500<small>/mês</small></s></span><span role="cell" class="lg-agent"><img src="img/agent-1.webp" alt="" width="300" height="505">Juliana <i>inclusa</i></span><span role="cell" class="lg-save mono">≈ R$ 3.500/mês</span><p class="lg-note"><b>Identidade consistente.</b> Capas, criativos e design system sob o mesmo padrão. Sem fila de demanda, sem "fica pra próxima semana".</p></div>
+      <div class="lg-row" role="row"><span role="cell"><b>Tráfego</b><small>Gestor de mídia</small></span><span role="cell"><s>R$ 4.000<small>/mês</small></s></span><span role="cell" class="lg-agent"><img src="img/agent-6.webp" alt="" width="307" height="440">Paulo <i>incluso</i></span><span role="cell" class="lg-save mono">≈ R$ 4.000/mês</span><p class="lg-note"><b>Réplica fiel da operação real.</b> Estratégia de mídia, criativos, segmentação e otimização de campanha rodando o tempo todo, sem pausa.</p></div>
+      <div class="lg-row" role="row"><span role="cell"><b>Projetos</b><small>Gestor de projetos</small></span><span role="cell"><s>R$ 4.500<small>/mês</small></s></span><span role="cell" class="lg-agent"><img src="img/agent-2.webp" alt="" width="303" height="440">Rafael <i>incluso</i></span><span role="cell" class="lg-save mono">≈ R$ 4.500/mês</span><p class="lg-note"><b>O time não atrasa.</b> Cronogramas, prazos, dependências e prioridades sob controle. Nada cai no esquecimento entre uma sprint e outra.</p></div>
+      <div class="lg-row" role="row"><span role="cell"><b>Tecnologia</b><small>Dev full-stack</small></span><span role="cell"><s>R$ 8.000<small>/mês</small></s></span><span role="cell" class="lg-agent"><img src="img/agent-4.webp" alt="" width="295" height="440">Clone do Rodrigo <i>incluso</i></span><span role="cell" class="lg-save mono">≈ R$ 8.000/mês</span><p class="lg-note"><b>Resolve qualquer requisito técnico.</b> Backend, APIs, integrações, automação e deploy. Sem vaga aberta há 4 meses, sem dev caro travando a fila.</p></div>
+      <div class="lg-row lg-chief" role="row"><span role="cell"><b>Comando</b><small>Coordenação / Chefe</small></span><span role="cell"><s>Você no operacional<small>seu tempo, sem preço</small></s></span><span role="cell" class="lg-agent"><img src="img/agent-gaia.webp" alt="" width="360" height="440">GAIA <i>inclusa</i></span><span role="cell" class="lg-save mono">O Chefe sai do operacional</span><p class="lg-note"><b>A IA atua no lugar do Chefe.</b> GAIA orquestra todo o time, distribui tarefas e devolve entregas prontas. Você decide a estratégia, ela executa.</p></div>
+    </div>
+
+    <div class="total" data-ply>
+      <p class="total-read" aria-label="De 29 mil e 500 reais por mês para cerca de mil reais por mês"><span class="mono total-from" data-decode>R$ 29.500/mês</span><span class="total-arrow" aria-hidden="true"></span><span class="total-to" data-decode>~R$ 1.000/mês</span></p>
+      <p class="body-muted total-txt">Um time humano de marketing e vendas custa ~R$ 29.500/mês em folha. O mesmo trabalho passa a rodar pelo custo médio de mil reais por mês de assinatura das IAs, OpenAI e Anthropic, que dão vida ao time. Economia acima de <b>R$ 28 mil por mês</b>, mais de <b>R$ 340 mil por ano</b>.</p>
+    </div>
+
+    <dl class="quad" data-ply>
+      <div><dt>24/7 sem pausa</dt><dd>A operação não para às 18h, nem no fim de semana, nem no feriado.</dd></div>
+      <div><dt>Resposta instantânea</dt><dd>O lead é respondido em segundos, não em horas. Atende mil ao mesmo tempo.</dd></div>
+      <div><dt>Zero turnover</dt><dd>Não pede demissão, não leva o conhecimento embora, não precisa re-treinar.</dd></div>
+      <div><dt>Escala infinita</dt><dd>Dobrou a demanda? O squad absorve sem nova contratação e sem custo extra.</dd></div>
+    </dl>
+    <div class="actions actions-center" data-ply>
+      <a class="btn btn-signal" href="#oferta">Trocar minha folha por IA <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+      <a class="btn btn-glass" href="#oferta">Ver a oferta completa</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRM ============ -->
+<section class="sec" id="crm" aria-labelledby="crm-title">
+  <div class="wrap duo duo-rev">
+    <div class="duo-txt">
+      <h2 class="h-lg" id="crm-title" data-ply>Junto com o squad vai o <em>CRM</em> que ele mesmo opera.</h2>
+      <p class="lead" data-ply>Você não ganha só o time. Ganha a ferramenta que o time usa pra trabalhar. Cada conversa vira um card no funil, a IA move o lead de etapa, dispara o follow-up na hora certa e fecha. Você não administra o CRM: o squad administra por você.</p>
+      <ul class="checks" data-ply>
+        <li>Funil visual em tempo real, do primeiro "oi" ao pagamento.</li>
+        <li>Follow-up automático por canal, sem você lembrar.</li>
+        <li>Histórico completo do cliente num só lugar.</li>
+      </ul>
+    </div>
+    <div class="console ply" data-ply aria-label="Demonstração do CRM Muccini Digital: leads passando pelas etapas do funil">
+      <div class="console-bar mono"><span>CRM Muccini Digital · funil</span><span class="demo">Demonstração</span></div>
+      <div class="kanban" id="kanban">
+        <div class="kb-col" data-col="0"><p class="mono">Novo lead</p></div>
+        <div class="kb-col" data-col="1"><p class="mono">Qualificado</p></div>
+        <div class="kb-col" data-col="2"><p class="mono">Reunião</p></div>
+        <div class="kb-col" data-col="3"><p class="mono">Proposta</p></div>
+        <div class="kb-col" data-col="4"><p class="mono">Pago</p></div>
+      </div>
+      <p class="console-log mono" id="kbLog" aria-live="off">GAIA · aguardando o primeiro lead</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AUTOMAÇÃO ============ -->
+<section class="sec sec-deep" id="automacao" aria-labelledby="auto-title">
+  <div class="wrap duo">
+    <div class="duo-txt">
+      <h2 class="h-lg" id="auto-title" data-ply>Cancele sua assinatura do <em>Make</em>, <em>N8N</em> e <em>Zapier</em>.</h2>
+      <p class="lead" data-ply>Toda a automação que você puxava por fora, disparos, gatilhos, tags e integrações entre canais, já vive dentro do CRM que o squad opera. Menos contas avulsas, menos webhook caindo no meio da madrugada, menos uma fatura em dólar.</p>
+      <ul class="checks" data-ply>
+        <li>Gatilhos por comportamento do lead e do aluno.</li>
+        <li>Fluxos visuais sem código, nativos da plataforma.</li>
+        <li>Uma fatura a menos em dólar todo mês.</li>
+      </ul>
+      <div class="actions" data-ply><a class="btn btn-signal" href="#oferta">Quero implantar o squad <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></div>
+    </div>
+    <div class="console ply" data-ply aria-label="Demonstração de um fluxo de automação: lead entra, IA qualifica, tag aplicada, follow-up e venda">
+      <div class="console-bar mono"><span>Fluxo · lead do WhatsApp</span><span class="demo">Demonstração</span></div>
+      <div class="flow" role="img" aria-label="Fluxo: lead entra, IA qualifica, tag aplicada, follow-up, venda">
+        <span class="fn" style="--i:0">Lead entra</span>
+        <span class="fn fn-ai" style="--i:1">IA qualifica</span>
+        <span class="fn" style="--i:2">Tag aplicada</span>
+        <span class="fn" style="--i:3">Follow-up</span>
+        <span class="fn fn-win" style="--i:4">Venda</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WEBINAR ============ -->
+<section class="sec" id="webinar" aria-labelledby="web-title">
+  <div class="wrap duo duo-rev">
+    <div class="duo-txt">
+      <h2 class="h-lg" id="web-title" data-ply>Adeus, <em>WebinarJam</em>.</h2>
+      <p class="lead" data-ply>Plataforma de webinars dentro do CRM que o squad opera: sala ao vivo, chat que aquece a audiência, oferta com botão na tela e gravação que vira aula na área de membros automaticamente. Sem mais uma assinatura, sem mais um login.</p>
+      <ul class="checks" data-ply>
+        <li>Sala ao vivo com chat e CTA na tela.</li>
+        <li>Replay automático na área de membros.</li>
+        <li>Sem assinatura separada de webinar.</li>
+      </ul>
+      <div class="actions" data-ply><a class="btn btn-signal" href="#oferta">Quero implantar o squad <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></div>
+    </div>
+    <figure class="frame" data-ply>
+      <img src="img/webinar.webp" alt="GAIA apresentando uma aula ao vivo diante de uma parede de transmissão de vidro" width="1536" height="1024" loading="lazy">
+      <figcaption class="callout" style="--cx:82%;--cy:30%;--lx:60%;--ly:76%"><span class="mono rec">Ao vivo</span>Sala, chat e oferta dentro do CRM.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ ERP ============ -->
+<section class="sec sec-deep" id="erp" aria-labelledby="erp-title">
+  <div class="wrap duo">
+    <div class="duo-txt">
+      <h2 class="h-lg" id="erp-title" data-ply>Um <em>ERP</em> que organiza o miolo da sua empresa.</h2>
+      <p class="lead" data-ply>Para o pequeno e médio empresário que se afoga em planilha, grupo de WhatsApp e conta pra pagar. Financeiro, time e processos internos num painel só, e a própria IA preenche, organiza e cobra o follow-up de tudo que ficou parado.</p>
+      <ul class="checks" data-ply>
+        <li><b>Financeiro:</b> contas a pagar e a receber, fluxo de caixa sempre atualizado.</li>
+        <li><b>Gestão de time:</b> tarefas, rotinas e desempenho em um lugar só.</li>
+        <li><b>Processos internos:</b> atendimento e questões internas fora do grupo de WhatsApp.</li>
+        <li><b>A IA no controle:</b> lança, organiza e cobra o que ficou pendente.</li>
+      </ul>
+      <div class="actions" data-ply><a class="btn btn-signal" href="#oferta">Quero o ERP na minha empresa <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></div>
+    </div>
+    <div class="console ply" data-ply aria-label="Demonstração do ERP: financeiro, tarefas e pendências organizados pela IA">
+      <div class="console-bar mono"><span>ERP Muccini Digital · hoje</span><span class="demo">Demonstração</span></div>
+      <div class="erp">
+        <div class="erp-kpis">
+          <p><span class="mono">A receber</span><b data-decode>R$ 48.320</b></p>
+          <p><span class="mono">A pagar</span><b data-decode>R$ 17.905</b></p>
+          <p><span class="mono">Saldo previsto</span><b data-decode>R$ 30.415</b></p>
+        </div>
+        <ul class="erp-list">
+          <li><span class="mono st st-ok">Lançado</span>Nota da agência de eventos conciliada</li>
+          <li><span class="mono st st-go">Cobrando</span>Fatura 0231 vencida há 2 dias: lembrete enviado</li>
+          <li><span class="mono st st-ok">Feito</span>Rotina de fechamento do caixa de ontem</li>
+          <li><span class="mono st st-go">Pendente</span>Contrato do fornecedor aguardando assinatura</li>
+          <li><span class="mono st st-ok">Organizado</span>Pedido de férias saiu do grupo e virou tarefa</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CUSTO ============ -->
+<section class="sec" id="custo" aria-labelledby="custo-title">
+  <div class="wrap">
+    <div class="cmp-head">
+      <h2 class="h-xl" id="custo-title" data-ply>Montar esse time com gente e ferramenta custa <em>uma fortuna</em> por mês.</h2>
+      <p class="lead" data-ply>Juntar equipe, agência e as assinaturas pra ter o mesmo resultado passa de R$ 15.500 por mês. O Squad GAIA entrega tudo por uma fração, e sem ninguém faltar na segunda-feira.</p>
+    </div>
+    <div class="versus">
+      <div class="vs-col" data-ply>
+        <h3>Contratar equipe + ferramentas</h3>
+        <p class="mono vs-tag">Opção A · Tradicional</p>
+        <p class="vs-price"><span data-decode>R$ 15.500</span><small>/mês</small></p>
+        <ul class="vs-list">
+          <li><span>SDR / atendente</span><span class="mono">R$ 3.000</span></li>
+          <li><span>Social media</span><span class="mono">R$ 2.500</span></li>
+          <li><span>Editor / suporte</span><span class="mono">R$ 3.000</span></li>
+          <li><span>CRM + automação + membros + webinar</span><span class="mono">R$ 4.000</span></li>
+          <li><span>Tráfego / gestão de ferramentas</span><span class="mono">R$ 3.000</span></li>
+        </ul>
+      </div>
+      <p class="vs-mid mono" aria-hidden="true">vs</p>
+      <div class="vs-col vs-b ply" data-ply>
+        <h3>Squad GAIA operando</h3>
+        <p class="mono vs-tag">Opção B · Muccini Digital</p>
+        <p class="vs-price"><span data-decode>~R$ 1.000</span><small>/mês</small></p>
+        <p class="body-muted">Assinatura das IAs que dão vida ao time, OpenAI e Anthropic, na média. É o único custo recorrente que o squad consome para trabalhar.</p>
+        <ul class="checks">
+          <li>Squad de agentes operando 24/7</li>
+          <li>CRM Muccini Digital + ERP de gestão inclusos</li>
+          <li>Automação nos 6 canais e webinars nativos</li>
+          <li>Esteira de conhecimento white-label</li>
+          <li>Sem férias, sem rescisão, sem turnover</li>
+        </ul>
+      </div>
+    </div>
+    <p class="save-line" data-ply>Economia de <b>R$ 14.500 por mês</b> e mais de <b>R$ 170.000 por ano</b>.</p>
+    <div class="actions actions-center" data-ply><a class="btn btn-signal" href="#oferta">Ver quanto posso economizar <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ============ PERFIS ============ -->
+<section class="sec sec-deep" id="perfis" aria-labelledby="perfis-title">
+  <div class="wrap">
+    <h2 class="h-xl perfis-title" id="perfis-title" data-ply>Três formas de operar, <em>um squad</em>.</h2>
+    <div class="trio">
+      <div data-ply>
+        <h3>Quem vende conhecimento</h3>
+        <p>Lançamentos, perpétuo e mentorias, com a esteira de conhecimento e os webinars já inclusos no squad.</p>
+        <ul class="ticks"><li>Captura, nutrição e webinar de vendas</li><li>Área de membros e app white-label</li><li>Follow-up infinito até o pagamento</li></ul>
+      </div>
+      <div data-ply>
+        <h3>Serviço &amp; negócio local</h3>
+        <p>Prestadores de serviço e negócios locais com agenda cheia via WhatsApp e atendimento que nunca dorme.</p>
+        <ul class="ticks"><li>SDR de IA respondendo em segundos</li><li>Agendamento direto no calendário</li><li>Reativação da carteira de clientes</li></ul>
+      </div>
+      <div data-ply>
+        <h3>Pequeno &amp; médio empresário</h3>
+        <p>Operação e gestão interna organizadas no ERP, com o squad cuidando de vendas, criação e do miolo da empresa.</p>
+        <ul class="ticks"><li>Financeiro e fluxo de caixa no painel</li><li>Time, tarefas e processos organizados</li><li>A IA lança, cobra e faz o follow-up</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFERTA ============ -->
+<section class="sec offer-sec" id="oferta" aria-labelledby="offer-title">
+  <img class="offer-room" src="img/room.webp" alt="" width="1920" height="1080" loading="lazy">
+  <div class="wrap offer">
+    <div class="offer-txt">
+      <h2 class="h-lg" id="offer-title" data-ply>Isto não é uma plataforma. É a <em>implantação de um squad</em> inteiro.</h2>
+      <p class="lead" data-ply>Você não assina mais um software. Você contrata a <b>implantação de um squad de agentes de IA, com contrato de 1 ano</b>, que opera a sua empresa <b>24 horas por dia, 7 dias por semana</b>. Vem com CRM Muccini Digital completo, ERP de gestão interna, automação nos 6 canais e acompanhamento contínuo, sem férias, sem turnover e sem folha de pagamento.</p>
+      <ul class="checks" data-ply>
+        <li>Squad de agentes operando 24/7</li>
+        <li>CRM Muccini Digital completo incluso</li>
+        <li>ERP de gestão interna incluso</li>
+        <li>Estratégia e acompanhamento contínuos</li>
+        <li>Automação WhatsApp &amp; Instagram nos 6 canais</li>
+        <li>Criação de sites, criativos e vídeos</li>
+      </ul>
+    </div>
+
+    <div class="terminal ply" data-ply>
+      <div id="offerFormWrap">
+        <h3 class="term-title">Agende com um especialista da GAIA.</h3>
+        <p class="mono term-id">Implantação do Squad GAIA · contrato de 1 ano</p>
+        <p class="body-muted">Preencha e um especialista agenda uma demonstração ao vivo da implantação do squad, com CRM e ERP inclusos.</p>
+        <form id="offerForm" class="form" novalidate>
+          <div class="fld"><label for="fNome">Nome</label><input id="fNome" name="nome" required placeholder="Seu nome completo" autocomplete="name"></div>
+          <div class="fld"><label for="fEmail">E-mail</label><input id="fEmail" type="email" name="email" required placeholder="voce@email.com" autocomplete="email"></div>
+          <div class="fld"><label for="fZap">WhatsApp</label><input id="fZap" name="whatsapp" required placeholder="(00) 00000-0000" autocomplete="tel" inputmode="tel"></div>
+          <div class="fld"><label for="fFat">Faturamento mensal</label>
+            <select id="fFat" name="faturamento" required>
+              <option value="" disabled selected>Selecione...</option>
+              <option>Até R$ 20 mil/mês</option><option>R$ 20 mil a R$ 50 mil/mês</option><option>R$ 50 mil a R$ 100 mil/mês</option><option>R$ 100 mil a R$ 300 mil/mês</option><option>R$ 300 mil a R$ 1 milhão/mês</option><option>Acima de R$ 1 milhão/mês</option>
+            </select></div>
+          <div class="fld"><label for="fFunc">Número de funcionários</label>
+            <select id="fFunc" name="funcionarios" required>
+              <option value="" disabled selected>Selecione...</option>
+              <option>Só eu</option><option>2 a 5</option><option>6 a 20</option><option>21 a 50</option><option>Mais de 50</option>
+            </select></div>
+          <p class="form-err" id="formErr" role="alert" hidden></p>
+          <button type="submit" class="btn btn-signal btn-block">Agendar demonstração <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></button>
+        </form>
+        <p class="mono term-foot">Vagas de implantação limitadas por mês</p>
+      </div>
+      <div class="term-ok" id="offerOk" hidden>
+        <h3 class="term-title">Obrigado.</h3>
+        <p class="mono term-id">Pedido recebido</p>
+        <p class="body-muted">Abrimos o <b>WhatsApp da GAIA</b> com os seus dados já preenchidos: é só tocar em enviar e um especialista agenda a sua demonstração.</p>
+        <a class="btn btn-glass" id="zapAgain" href="#" target="_blank" rel="noopener">Abrir o WhatsApp de novo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÚLTIMA CHAMADA ============ -->
+<section class="sec final" id="agendar" aria-labelledby="final-title">
+  <div class="wrap final-in">
+    <h2 class="h-xxl" id="final-title" data-ply>Pare de contratar. <em>Comece a implantar</em>.</h2>
+    <p class="lead" data-ply>Uma reunião de 30 minutos pra mapear seu negócio, mostrar o squad rodando e desenhar a sua implantação. Sem compromisso, só clareza de quanto você economiza e de quanto pode crescer.</p>
+    <div class="actions actions-center" data-ply>
+      <a class="btn btn-signal" href="#oferta">Agendar implantação <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+      <a class="btn btn-glass" href="#oferta">Falar com consultor</a>
+    </div>
+    <p class="mono final-note">Resposta no mesmo dia útil · Vagas de implantação limitadas por mês · 23.5505° S · 46.6333° O</p>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <p class="wordmark"><b>GAIA</b><span>· Gestão Avançada de Inteligência Artificial</span></p>
+  <p class="mono">Muccini Digital · © 2026</p>
+</footer>
+
+<dialog class="dossier ply" id="dossier" aria-labelledby="dsName">
+  <button type="button" class="ds-close" data-close aria-label="Fechar dossiê"><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15"/></svg></button>
+  <div class="ds-grid">
+    <img class="ds-photo" id="dsPhoto" src="img/gaia-full.webp" alt="" width="300" height="400">
+    <div class="ds-body">
+      <h3 class="ds-name" id="dsName"></h3>
+      <p class="mono ds-role" id="dsRole"></p>
+      <p class="ds-resumo" id="dsResumo"></p>
+      <p class="mono ds-label">O que faz</p>
+      <ul class="checks" id="dsDoes"></ul>
+      <ul class="chips chips-sm" id="dsChips"></ul>
+      <p class="ds-fluxo" id="dsFluxo"></p>
+    </div>
+  </div>
+</dialog>
+
+<script src="js/gaia.js" defer></script>
+</body>
+</html>
