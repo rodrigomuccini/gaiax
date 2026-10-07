@@ -174,12 +174,49 @@
       <div class="v2-row" role="row"><b role="rowheader">Como começa</b><span role="cell">Você cria a conta e se vira sozinho.</span><span role="cell" class="v2-gaia">Implantação feita por especialista, com acompanhamento contínuo.</span></div>
     </div>
 
+    <h3 class="steps-title" data-ply>O caminho de um pedido</h3>
+    <p class="body-muted flow-intro" data-ply>Escolha um exemplo e veja, passo a passo, quem faz o quê até a entrega chegar pronta para você.</p>
+    <div class="fl-tabs" data-ply role="group" aria-label="Exemplos de pedido">
+      <button type="button" class="fl-tab on" data-i="0">Uma página</button>
+      <button type="button" class="fl-tab" data-i="1">Um roteiro</button>
+      <button type="button" class="fl-tab" data-i="2">Mais clientes</button>
+      <button type="button" class="fl-tab" data-i="3">Atender contatos</button>
+    </div>
+    <div class="flow2 ply" id="flow2" data-ply role="img" aria-label="Fluxo de um pedido: você pede pelo Telegram, a GAIA organiza, o especialista executa e a entrega volta revisada para você.">
+      <div class="fl-col"><div class="fl-node fl-you" data-n="you">
+        <span class="mono fl-tag">Você</span>
+        <svg class="fl-plane" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7 12.5l10-4-3.5 8-2.2-3z"/></svg>
+        <p class="fl-req" id="flReq">Preciso de uma página para a campanha de sexta.</p>
+        <span class="fl-sub mono">Telegram · texto ou áudio</span>
+      </div></div>
+      <div class="fl-col"><div class="fl-node fl-gaia" data-n="gaia">
+        <img src="img/agent-gaia.webp" alt="" width="360" height="440">
+        <b>GAIA</b><span class="mono fl-tag">Orquestradora</span>
+        <span class="fl-sub">Entende o pedido, escolhe o especialista e divide o trabalho.</span>
+      </div></div>
+      <div class="fl-col fl-team">
+        <div class="fl-node fl-agent" data-n="juliana"><img src="img/agent-1.webp" alt="" width="300" height="505"><b>Juliana</b><span class="mono">Design</span></div>
+        <div class="fl-node fl-agent" data-n="jonathan"><img src="img/agent-5.webp" alt="" width="289" height="440"><b>Jonathan</b><span class="mono">Textos</span></div>
+        <div class="fl-node fl-agent" data-n="paulo"><img src="img/agent-6.webp" alt="" width="307" height="440"><b>Paulo</b><span class="mono">Tráfego</span></div>
+        <div class="fl-node fl-agent" data-n="davi"><img src="img/agent-7.webp" alt="" width="346" height="440"><b>Davi</b><span class="mono">Vendas</span></div>
+        <div class="fl-node fl-agent" data-n="clone"><img src="img/agent-4.webp" alt="" width="295" height="440"><b>Clone do Rodrigo</b><span class="mono">Código</span></div>
+        <div class="fl-node fl-agent" data-n="rafael"><img src="img/agent-2.webp" alt="" width="303" height="440"><b>Rafael</b><span class="mono">Projetos</span></div>
+      </div>
+      <div class="fl-col"><div class="fl-node fl-out" data-n="out">
+        <span class="mono fl-tag">Entrega pronta</span>
+        <p class="fl-req" id="flOut">Página no ar.</p>
+        <span class="fl-sub mono">Revisada pela GAIA</span>
+      </div></div>
+      <svg class="fl-svg" id="flSvg" aria-hidden="true"></svg>
+      <p class="fl-back mono" id="flBack">A GAIA revisa e devolve no Telegram</p>
+    </div>
+
     <h3 class="steps-title" data-ply>Como funciona, em quatro passos</h3>
     <ol class="steps">
-      <li data-ply><span class="mono st-n">01</span><b>Você pede</b><span>Por texto ou áudio, no Telegram, do jeito que falaria com uma gerente.</span></li>
-      <li data-ply><span class="mono st-n">02</span><b>A GAIA organiza</b><span>Entende o pedido, escolhe o especialista certo e divide o trabalho.</span></li>
-      <li data-ply><span class="mono st-n">03</span><b>O time executa</b><span>Texto, design, código, tráfego ou vendas, cada agente na sua função.</span></li>
-      <li data-ply><span class="mono st-n">04</span><b>Você recebe pronto</b><span>A entrega volta revisada pela GAIA, pronta para você aprovar.</span></li>
+      <li data-ply data-step="1"><span class="mono st-n">01</span><b>Você pede</b><span>Por texto ou áudio, no Telegram, do jeito que falaria com uma gerente.</span></li>
+      <li data-ply data-step="2"><span class="mono st-n">02</span><b>A GAIA organiza</b><span>Entende o pedido, escolhe o especialista certo e divide o trabalho.</span></li>
+      <li data-ply data-step="3"><span class="mono st-n">03</span><b>O time executa</b><span>Texto, design, código, tráfego ou vendas, cada agente na sua função.</span></li>
+      <li data-ply data-step="4"><span class="mono st-n">04</span><b>Você recebe pronto</b><span>A entrega volta revisada pela GAIA, pronta para você aprovar.</span></li>
     </ol>
     <div class="actions actions-center" data-ply><a class="btn btn-signal" href="#oferta">Quero conhecer a implantação <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></div>
   </div>

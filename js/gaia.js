@@ -388,6 +388,72 @@
   window.addEventListener('load', drawLeaders);
   window.addEventListener('resize', function () { clearTimeout(drawLeaders.t); drawLeaders.t = setTimeout(drawLeaders, 150); });
 
+  /* ---------- fluxo do pedido: você pede, a GAIA organiza, o time executa, a entrega volta ---------- */
+  var flow = document.getElementById('flow2');
+  if (flow) {
+    var NS = 'http://www.w3.org/2000/svg', svg = document.getElementById('flSvg');
+    var CASES = [
+      { req: 'Preciso de uma página para a campanha de sexta.', who: ['juliana', 'clone'], out: 'Página no ar.' },
+      { req: 'Escreve o roteiro do anúncio.', who: ['jonathan'], out: 'Roteiro pronto para gravar.' },
+      { req: 'Quero mais clientes chegando.', who: ['paulo'], out: 'Campanha rodando e sendo otimizada.' },
+      { req: 'Quem me chamou hoje?', who: ['davi'], out: 'Contatos respondidos e reuniões agendadas.' }
+    ];
+    var node = function (n) { return flow.querySelector('[data-n="' + n + '"]'); };
+    var steps = document.querySelectorAll('.steps li[data-step]'), tabs = document.querySelectorAll('.fl-tab');
+    var lines = { yg: null, ga: {}, ao: {}, ret: null }, pulses = {};
+    var AG = ['juliana', 'jonathan', 'paulo', 'davi', 'clone', 'rafael'];
+    function mk(cls, d) { var p = document.createElementNS(NS, 'path'); p.setAttribute('class', cls); if (d) p.setAttribute('d', d); svg.appendChild(p); return p; }
+    function curve(x1, y1, x2, y2) { var dx = Math.abs(x2 - x1) * 0.5; return 'M' + x1 + ' ' + y1 + ' C' + (x1 + dx) + ' ' + y1 + ' ' + (x2 - dx) + ' ' + y2 + ' ' + x2 + ' ' + y2; }
+    function draw() {
+      if (getComputedStyle(svg).display === 'none') return;
+      var fr = flow.getBoundingClientRect(); svg.textContent = ''; lines = { yg: null, ga: {}, ao: {}, ret: null }; pulses = {};
+      function pt(n, side) { var r = node(n).getBoundingClientRect(); var x = side === 'r' ? r.right : side === 'l' ? r.left : r.left + r.width / 2; var y = side === 'b' ? r.bottom : r.top + r.height / 2; return [x - fr.left, y - fr.top]; }
+      function line(key, d, store, k) { var p = mk('fl-line', d), q = mk('fl-pulse', d); q.style.setProperty('--len', Math.ceil(p.getTotalLength()) + 'px'); if (k) { store[k] = p; pulses[key + k] = q; } else { lines[key] = p; pulses[key] = q; } }
+      var y = pt('you', 'r'), g1 = pt('gaia', 'l'), g2 = pt('gaia', 'r'), o = pt('out', 'l');
+      line('yg', curve(y[0], y[1], g1[0], g1[1]));
+      AG.forEach(function (a) { var l = pt(a, 'l'), r = pt(a, 'r'); line('ga', curve(g2[0], g2[1], l[0], l[1]), lines.ga, a); line('ao', curve(r[0], r[1], o[0], o[1]), lines.ao, a); });
+      var ob = pt('out', 'b'), yb = pt('you', 'b'), low = flow.clientHeight - 36;
+      line('ret', 'M' + ob[0] + ' ' + ob[1] + ' C' + ob[0] + ' ' + low + ' ' + yb[0] + ' ' + low + ' ' + yb[0] + ' ' + yb[1]);
+    }
+    function run(p, ms) { if (!p) return; p.style.setProperty('--dur', ms + 'ms'); p.classList.remove('run'); void p.getBoundingClientRect(); p.classList.add('run'); }
+    var cur = 0, phase = 0, timer = 0, auto = true;
+    function clear() {
+      flow.querySelectorAll('.fl-node').forEach(function (n) { n.classList.remove('lit'); n.classList.remove('dim'); });
+      flow.querySelectorAll('.fl-line').forEach(function (l) { l.classList.remove('on'); });
+      document.getElementById('flBack').classList.remove('lit');
+    }
+    function show(i, ph) {
+      var c = CASES[i]; clear();
+      document.getElementById('flReq').textContent = c.req;
+      document.getElementById('flOut').textContent = ph >= 3 ? c.out : '…';
+      flow.querySelectorAll('.fl-agent').forEach(function (n) { if (c.who.indexOf(n.dataset.n) < 0 && ph >= 2) n.classList.add('dim'); });
+      node('you').classList.add('lit');
+      if (ph >= 1) { node('gaia').classList.add('lit'); lines.yg && lines.yg.classList.add('on'); if (ph === 1) run(pulses.yg, 900); }
+      if (ph >= 2) c.who.forEach(function (a) { node(a).classList.add('lit'); lines.ga[a] && lines.ga[a].classList.add('on'); if (ph === 2) run(pulses['ga' + a], 900); });
+      if (ph >= 3) { node('out').classList.add('lit'); c.who.forEach(function (a) { lines.ao[a] && lines.ao[a].classList.add('on'); if (ph === 3) run(pulses['ao' + a], 900); }); }
+      if (ph >= 4) { document.getElementById('flBack').classList.add('lit'); lines.ret && lines.ret.classList.add('on'); if (ph === 4) run(pulses.ret, 1100); }
+      var step = [1, 2, 3, 3, 4][ph];
+      flow.classList.add('flow-on'); document.querySelector('#diferencial').classList.add('flow-on');
+      steps.forEach(function (s) { s.classList.toggle('active', +s.dataset.step === step); });
+      tabs.forEach(function (t, k) { t.classList.toggle('on', k === i); });
+    }
+    function tick() {
+      if (document.hidden) return;
+      show(cur, phase);
+      phase++; if (phase > 4) { phase = 0; if (auto) cur = (cur + 1) % CASES.length; }
+    }
+    function start() { clearInterval(timer); phase = 0; show(cur, 0); phase = 1; timer = setInterval(tick, 1500); }
+    tabs.forEach(function (t, k) { t.addEventListener('click', function () { cur = k; auto = false; start(); }); });
+    var vis = false;
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        if (es[0].isIntersecting && !vis) { vis = true; draw(); if (reduce) { cur = 0; show(0, 4); } else start(); }
+      }, { threshold: 0.25 }).observe(flow);
+    }
+    window.addEventListener('resize', function () { clearTimeout(draw.t); draw.t = setTimeout(function () { draw(); if (vis) show(cur, Math.max(0, phase - 1)); }, 150); });
+    window.addEventListener('load', function () { draw(); });
+  }
+
   /* ---------- um dia de trabalho do squad (demonstração) ---------- */
   var feedEl = document.getElementById('taskFeed'), feedLog = document.getElementById('feedLog');
   if (feedEl) {
