@@ -14,50 +14,50 @@
     gaia: {
       name: 'GAIA', role: 'Agente central · orquestradora', photo: 'img/gaia-full.webp',
       resumo: 'A gerente da sua operação de IA e o centro de comando do time. Recebe o pedido em português, planeja, delega ao especialista certo, valida e te entrega pronto.',
-      does: ['Orquestra o time inteiro: copy, código, design, tráfego e vendas.', 'Conversa com você por texto ou áudio e devolve cada entrega revisada.', 'Cuida das campanhas, automações e funis dentro do CRM Muccini Digital.'],
-      chips: ['Telegram', 'WhatsApp', 'Instagram', 'Meta Ads', 'CRM Muccini Digital'],
+      does: ['Orquestra o time inteiro: copy, código, design, tráfego e vendas.', 'Conversa com você por texto ou áudio e devolve cada entrega revisada.', 'Cuida das campanhas, dos funis de venda e do atendimento.'],
+      chips: ['Telegram', 'WhatsApp', 'Instagram', 'Meta Ads'],
       fluxo: 'Seu ponto único de contato: aciona os especialistas e garante que tudo volte revisado.'
     },
     juliana: {
       name: 'Juliana', role: 'Produção & design · braço direito da GAIA', photo: 'img/agent-1.webp',
       resumo: 'Braço direito da GAIA e segunda no comando. Quando a demanda é grande, assume a coordenação do time e garante o padrão visual.',
       does: ['Coordena a produção entre Jonathan e o Clone do Rodrigo nos trabalhos maiores.', 'Cria landing pages, criativos de anúncio e layouts de Instagram.', 'Define os padrões da marca e mantém a consistência visual.'],
-      chips: ['CRM Muccini Digital', 'Instagram', 'Vercel', 'OpenAI'],
+      chips: ['Instagram', 'Vercel', 'OpenAI'],
       fluxo: 'A ponte entre a estratégia da GAIA e a execução: divide, padroniza e entrega fechado.'
     },
     rafael: {
       name: 'Rafael', role: 'Gestor de projetos', photo: 'img/agent-2.webp',
       resumo: 'O gestor de projetos do time. Transforma a estratégia da GAIA em cronograma, com prioridade e prazo.',
       does: ['Monta o plano de entregas e prioriza o que vem primeiro.', 'Divide a estratégia em etapas e distribui entre as áreas.', 'Acompanha cada frente e identifica gargalo antes do atraso.'],
-      chips: ['CRM Muccini Digital', 'Telegram'],
+      chips: ['Telegram'],
       fluxo: 'Pega a estratégia validada e garante que tudo chegue no tempo combinado.'
     },
     clone: {
       name: 'Clone do Rodrigo', role: 'Desenvolvedor full-stack', photo: 'img/agent-4.webp',
       resumo: 'O desenvolvedor do time. Quando precisa de código, é ele que constrói sites, sistemas e automações e coloca tudo no ar.',
       does: ['Constrói sites, sistemas e automações do zero.', 'Implementa funcionalidades novas e resolve o que quebrou.', 'Integra suas ferramentas e valida ponta a ponta antes de entregar.'],
-      chips: ['GitHub', 'Vercel', 'Cloudflare', 'Hostinger', 'CRM Muccini Digital'],
+      chips: ['GitHub', 'Vercel', 'Cloudflare', 'Hostinger'],
       fluxo: 'Acionado quando a entrega tem código: testa antes e devolve funcionando.'
     },
     jonathan: {
       name: 'Jonathan', role: 'Copywriter & pesquisa', photo: 'img/agent-5.webp',
       resumo: 'O redator e pesquisador do time. Escreve tudo com intenção de venda e pesquisa cada referência antes.',
       does: ['Escreve cartas e páginas de venda.', 'Cria roteiros de anúncio e de Reels.', 'Produz posts, carrossel e sequências de e-mail com base em pesquisa.'],
-      chips: ['Instagram', 'E-mail', 'CRM Muccini Digital'],
+      chips: ['Instagram', 'E-mail'],
       fluxo: 'Recebe o briefing, pesquisa, escreve e abastece os anúncios com a copy certa.'
     },
     paulo: {
       name: 'Paulo', role: 'Gestor de tráfego', photo: 'img/agent-6.webp',
       resumo: 'O gestor de tráfego do time. Cuida dos anúncios pagos, do plano até a otimização.',
       does: ['Estrutura campanhas no Facebook e Instagram e cria o criativo.', 'Monta os públicos frio, quente e parecidos.', 'Acompanha as métricas e otimiza o custo por resultado.'],
-      chips: ['Meta Ads', 'Facebook', 'Instagram', 'CRM Muccini Digital'],
-      fluxo: 'Transforma a verba em campanha rodando e entrega o lead direto no CRM.'
+      chips: ['Meta Ads', 'Facebook', 'Instagram'],
+      fluxo: 'Transforma a verba em campanha rodando e entrega o lead direto ao time de vendas.'
     },
     davi: {
       name: 'Davi', role: 'SDR · vendas no WhatsApp', photo: 'img/agent-7.webp',
       resumo: 'O líder do squad de vendas e vendedor de WhatsApp. Conduz a conversa do primeiro contato até o agendamento.',
-      does: ['Faz o primeiro contato e qualifica com método consultivo.', 'Responde objeção e faz o acompanhamento.', 'Agenda a reunião e coordena o squad no CRM.'],
-      chips: ['WhatsApp', 'CRM Muccini Digital', 'Calendários'],
+      does: ['Faz o primeiro contato e qualifica com método consultivo.', 'Responde objeção e faz o acompanhamento.', 'Agenda a reunião e coordena o squad de vendas.'],
+      chips: ['WhatsApp', 'Calendários'],
       fluxo: 'Recebe o lead do tráfego, aquece pelo WhatsApp e entrega agendado ao comercial.'
     }
   };
@@ -388,53 +388,35 @@
   window.addEventListener('load', drawLeaders);
   window.addEventListener('resize', function () { clearTimeout(drawLeaders.t); drawLeaders.t = setTimeout(drawLeaders, 150); });
 
-  /* ---------- fluxo: distância que o pulso percorre ---------- */
-  function flowW() {
-    document.querySelectorAll('.flow').forEach(function (f) {
-      var n = f.querySelectorAll('.fn'); if (n.length < 2) return;
-      var a = n[0].getBoundingClientRect(), b = n[n.length - 1].getBoundingClientRect();
-      f.style.setProperty('--flow-w', Math.max(0, (b.left + b.width / 2) - (a.left + a.width / 2) - 56) + 'px');
-    });
-  }
-  flowW(); window.addEventListener('resize', flowW);
-
-  /* ---------- CRM: leads atravessando o funil (demonstração) ---------- */
-  var kb = document.getElementById('kanban'), kbLog = document.getElementById('kbLog');
-  if (kb) {
-    var cols = kb.querySelectorAll('.kb-col');
-    var LEADS = [['Mariana C.', 'WhatsApp'], ['Clínica Sorriso', 'Instagram'], ['João P.', 'Site'], ['Studio Lume', 'WhatsApp'], ['Ana B.', 'TikTok'], ['Escola Prisma', 'Telegram']];
-    var STEPS = ['qualificou', 'agendou a reunião com', 'enviou a proposta para', 'confirmou o pagamento de'];
-    var cards = [];
-    LEADS.forEach(function (l, i) {
-      var c = document.createElement('div'); c.className = 'kb-card';
-      c.innerHTML = '<span></span><small></small>'; c.firstChild.textContent = l[0]; c.lastChild.textContent = l[1];
-      c.dataset.col = String(Math.min(4, Math.floor(i * 0.8)));
-      cols[+c.dataset.col].appendChild(c); cards.push(c);
-    });
-    var kbStarted = false;
-    function kbStep() {
+  /* ---------- um dia de trabalho do squad (demonstração) ---------- */
+  var feedEl = document.getElementById('taskFeed'), feedLog = document.getElementById('feedLog');
+  if (feedEl) {
+    var TASKS = [
+      ['08:02', 'Davi', 'Respondeu e qualificou um novo contato no WhatsApp'],
+      ['08:15', 'Jonathan', 'Escreveu o roteiro do anúncio da semana'],
+      ['09:40', 'Juliana', 'Montou a página da campanha de sexta'],
+      ['10:05', 'Clone do Rodrigo', 'Publicou o site no ar'],
+      ['11:30', 'Paulo', 'Subiu os criativos e ajustou o custo por lead'],
+      ['12:10', 'Rafael', 'Atualizou o cronograma das entregas'],
+      ['12:45', 'GAIA', 'Revisou tudo e enviou o resumo no Telegram']
+    ];
+    var feedN = 0, feedStarted = false;
+    function feedStep() {
       if (document.hidden) return;
-      var movable = cards.filter(function (c) { return +c.dataset.col < 4; });
-      if (!movable.length) {
-        cards.forEach(function (c) { c.dataset.col = '0'; cols[0].appendChild(c); });
-        kbLog.textContent = 'GAIA · novos leads entrando no funil';
-        return;
+      if (feedN >= TASKS.length) {
+        feedN = 0; feedEl.textContent = ''; feedLog.textContent = 'Um novo dia começa'; return;
       }
-      var c = movable[(Math.random() * movable.length) | 0];
-      var from = +c.dataset.col, to = from + 1;
-      var first = c.getBoundingClientRect();
-      cols[to].appendChild(c); c.dataset.col = String(to);
-      if (!reduce) {
-        var last = c.getBoundingClientRect();
-        c.animate([{ transform: 'translate(' + (first.left - last.left) + 'px,' + (first.top - last.top) + 'px)' }, { transform: 'none' }], { duration: 700, easing: 'cubic-bezier(.16,1,.3,1)' });
-      }
-      cards.forEach(function (x) { x.classList.toggle('hot', x === c); });
-      kbLog.textContent = 'Davi ' + STEPS[from] + ' ' + c.firstChild.textContent + ' · ' + c.lastChild.textContent;
+      var t = TASKS[feedN++], li = document.createElement('li');
+      li.innerHTML = '<span class="mono f-t"></span><b></b><span class="f-d"></span>';
+      li.children[0].textContent = t[0]; li.children[1].textContent = t[1]; li.children[2].textContent = t[2];
+      li.className = 'f-new'; feedEl.appendChild(li);
+      Array.prototype.forEach.call(feedEl.children, function (x) { if (x !== li) x.classList.remove('f-new'); });
+      feedLog.textContent = t[1] + ' · ' + t[2];
     }
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (es) {
-        if (es[0].isIntersecting && !kbStarted) { kbStarted = true; kbStep(); setInterval(kbStep, reduce ? 4000 : 1900); }
-      }, { threshold: 0.3 }).observe(kb);
+        if (es[0].isIntersecting && !feedStarted) { feedStarted = true; feedStep(); setInterval(feedStep, reduce ? 3500 : 1900); }
+      }, { threshold: 0.3 }).observe(feedEl);
     }
   }
 
