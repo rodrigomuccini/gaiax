@@ -455,6 +455,47 @@
     window.addEventListener('load', function () { draw(); });
   }
 
+  /* ---------- quando algo entra na tela, roda uma vez (e repete enquanto visível) ---------- */
+  function whenSeen(el, fn, th) {
+    if (!el) return;
+    if (!('IntersectionObserver' in window)) { fn(); return; }
+    var done = false;
+    new IntersectionObserver(function (es) { if (es[0].isIntersecting && !done) { done = true; fn(); } }, { threshold: th || 0.3 }).observe(el);
+  }
+
+  /* 23h04: as duas conversas acontecem lado a lado */
+  var lanes = Array.prototype.slice.call(document.querySelectorAll('#noite .chat'));
+  if (lanes.length && !reduce) {
+    lanes.forEach(function (l) { l.classList.add('play'); });
+    whenSeen(document.querySelector('#noite .nt-grid'), function () {
+      var k = 0, max = Math.max.apply(null, lanes.map(function (l) { return l.children.length; }));
+      function step() {
+        if (document.hidden) { setTimeout(step, 800); return; }
+        if (k >= max) { setTimeout(function () { lanes.forEach(function (l) { Array.prototype.forEach.call(l.children, function (li) { li.classList.remove('on'); }); }); k = 0; setTimeout(step, 700); }, 5200); return; }
+        lanes.forEach(function (l) { if (l.children[k]) l.children[k].classList.add('on'); });
+        k++; setTimeout(step, 1150);
+      }
+      step();
+    }, 0.25);
+  }
+
+  /* ciclo diário de conteúdo */
+  var cyc = document.getElementById('cycle');
+  if (cyc) {
+    var cyNodes = cyc.querySelectorAll('.cy-node'), cyI = 0;
+    function cyShow(i) { cyc.style.setProperty('--cy-step', i); Array.prototype.forEach.call(cyNodes, function (n, k) { n.classList.toggle('on', k === i); }); }
+    cyShow(0);
+    if (!reduce) whenSeen(cyc, function () { setInterval(function () { if (document.hidden) return; cyI = (cyI + 1) % cyNodes.length; cyShow(cyI); }, 1900); });
+  }
+
+  /* sistema sob pedido: pedido, perguntas, construção, entregue */
+  var bsteps = document.querySelectorAll('#build .build-steps li');
+  if (bsteps.length) {
+    function bShow(k) { Array.prototype.forEach.call(bsteps, function (li, i) { li.classList.toggle('done', i < k); li.classList.toggle('on', i === k); }); }
+    if (reduce) bShow(bsteps.length - 1);
+    else { bShow(0); whenSeen(document.getElementById('build'), function () { var k = 0; setInterval(function () { if (document.hidden) return; k = (k + 1) % (bsteps.length + 1); bShow(Math.min(k, bsteps.length - 1)); }, 1500); }); }
+  }
+
   /* ---------- um dia de trabalho do squad (demonstração) ---------- */
   var feedEl = document.getElementById('taskFeed'), feedLog = document.getElementById('feedLog');
   if (feedEl) {

@@ -33,15 +33,19 @@
 <nav class="rail" aria-label="Linha de navegação">
   <ol>
     <li><a href="#hero" data-rail="hero"><span>Parede</span></a></li>
+    <li><a href="#noite" data-rail="noite"><span>Mensagem às 23h</span></a></li>
     <li><a href="#plataforma" data-rail="plataforma"><span>Você não contrata software</span></a></li>
     <li><a href="#equipe" data-rail="equipe"><span>O squad</span></a></li>
     <li><a href="#diferencial" data-rail="diferencial"><span>GAIA × ChatGPT e Claude</span></a></li>
     <li><a href="#capta" data-rail="capta"><span>A operação inteira pronta</span></a></li>
+    <li><a href="#conteudo" data-rail="conteudo"><span>Conteúdo todo dia às 7h</span></a></li>
     <li><a href="#chefe" data-rail="chefe"><span>A IA no comando</span></a></li>
     <li><a href="#telegram" data-rail="telegram"><span>Interação pelo Telegram</span></a></li>
     <li><a href="#criacao" data-rail="criacao"><span>Criação sem parar</span></a></li>
+    <li><a href="#bastidores" data-rail="bastidores"><span>Financeiro e sistemas</span></a></li>
     <li><a href="#ia-vs-humano" data-rail="ia-vs-humano"><span>Função por função</span></a></li>
     <li><a href="#pratica" data-rail="pratica"><span>Um dia de trabalho do squad</span></a></li>
+    <li><a href="#sob-medida" data-rail="sob-medida"><span>Feito sob medida</span></a></li>
     <li><a href="#perfis" data-rail="perfis"><span>Três tipos de negócio</span></a></li>
     <li><a href="#oferta" data-rail="oferta"><span>Implantação · contrato de 1 ano</span></a></li>
   </ol>
@@ -99,6 +103,51 @@
   </div>
 </section>
 
+<!-- ============ 23H04 ============ -->
+<section class="sec sec-deep" id="noite" aria-labelledby="nt-title">
+  <div class="wrap">
+    <div class="cmp-head">
+      <h2 class="h-xl" id="nt-title" data-ply>Seu cliente mandou mensagem às <em>23h04</em>. Ninguém respondeu.</h2>
+      <p class="lead" data-ply>De manhã, talvez a resposta já seja tarde. A GAIA responde na hora, com a sua linguagem e o seu conhecimento. Se você quiser, até com a sua voz.</p>
+    </div>
+
+    <div class="nt-grid">
+      <div class="lane ply" data-ply>
+        <p class="mono lane-tag lane-tag-off">Sem a GAIA</p>
+        <ol class="chat" data-lane="off">
+          <li class="msg in"><span class="mono">23:04</span>Oi! Vocês ainda têm horário para esta semana?</li>
+          <li class="gap mono">Sem resposta durante a noite</li>
+          <li class="msg out late"><span class="mono">08:47</span>Bom dia! Desculpe a demora, ainda tem interesse?</li>
+          <li class="msg in"><span class="mono">08:52</span>Obrigado, já resolvi com outra empresa.</li>
+          <li class="sys mono sys-lost">Cliente perdido</li>
+        </ol>
+      </div>
+      <div class="lane lane-on ply" data-ply>
+        <p class="mono lane-tag">Com a GAIA</p>
+        <ol class="chat" data-lane="on">
+          <li class="msg in"><span class="mono">23:04</span>Oi! Vocês ainda têm horário para esta semana?</li>
+          <li class="msg out"><span class="mono">23:04</span>Oi! Temos sim. Me conta rapidinho o que você precisa que eu já vejo o melhor horário.</li>
+          <li class="msg in"><span class="mono">23:06</span>É uma avaliação. De preferência quinta à tarde.</li>
+          <li class="msg out voice"><span class="mono">23:07</span><span class="vbar" aria-hidden="true"></span>Mensagem de voz · 0:09<em>"Quinta às 15h está livre, já deixei reservado para você."</em></li>
+          <li class="sys mono sys-won">Horário marcado na agenda · 23h07</li>
+        </ol>
+      </div>
+      <figure class="frame nt-photo" data-ply>
+        <img src="img/noite.webp" alt="GAIA respondendo uma conversa na parede de vidro, tarde da noite, com o escritório vazio" width="1536" height="1024" loading="lazy">
+      </figure>
+    </div>
+    <p class="mono demo-note" data-ply>Exemplo ilustrativo</p>
+
+    <div class="clock24 ply" data-ply role="img" aria-label="Esquema: a equipe humana atende no horário comercial, das 9h às 18h. A GAIA atende 24 horas. A mensagem das 23h04 cai fora do horário comercial.">
+      <div class="c24-axis mono" aria-hidden="true"><span style="--p:0">0h</span><span style="--p:25">6h</span><span style="--p:50">12h</span><span style="--p:75">18h</span><span style="--p:100">24h</span></div>
+      <div class="c24-row"><b>Equipe humana</b><div class="c24-track"><i class="c24-bar c24-human" style="--a:37.5;--b:75"></i></div></div>
+      <div class="c24-row"><b>GAIA</b><div class="c24-track"><i class="c24-bar c24-gaia" style="--a:0;--b:100"></i></div></div>
+      <div class="c24-mark" style="--p:96.15"><span class="mono">23h04</span></div>
+      <p class="c24-note mono">Esquema · horário comercial das 9h às 18h</p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ VOCÊ NÃO CONTRATA SOFTWARE ============ -->
 <section class="sec" id="plataforma" aria-labelledby="plat-title">
   <div class="wrap">
@@ -116,12 +165,22 @@
       </div>
     </div>
 
-    <ol class="index" aria-label="As quatro frentes do squad">
-      <li data-ply><a href="#capta"><span class="ix-code mono">VND</span><b>Vendas &amp; atendimento</b><span>SDR de IA no WhatsApp e nas redes: qualifica o lead, agenda a call e faz o follow-up até o pagamento, sem você levantar um dedo.</span><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></li>
-      <li data-ply><a href="#criacao"><span class="ix-code mono">CRI</span><b>Criação sem fila</b><span>Sites, imagens, copy e carrossel, tudo produzido pelo próprio squad no mesmo dia.</span><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></li>
-      <li data-ply hidden><a href="#equipe"><span class="ix-code mono">TRF</span><b>Anúncios e tráfego</b><span>Campanhas, públicos e criativos no ar, com o custo por resultado sendo otimizado o tempo todo.</span><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></li>
-      <li data-ply><a href="#diferencial"><span class="ix-code mono">CMD</span><b>Coordenação pela GAIA</b><span>Você pede por texto ou áudio no Telegram. A GAIA distribui ao especialista certo e devolve tudo revisado.</span><svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></li>
-    </ol>
+    <div class="org" data-ply role="group" aria-label="Organograma: a GAIA no centro, com uma área de especialistas para cada frente da empresa">
+      <div class="org-top">
+        <a class="org-node org-gaia" href="#diferencial">
+          <img src="img/agent-gaia.webp" alt="" width="360" height="440">
+          <span class="org-g-txt"><b>GAIA</b><span class="mono">Agente central</span><span>Recebe o seu pedido, distribui para a área certa e devolve tudo revisado.</span></span>
+        </a>
+      </div>
+      <div class="org-branches">
+        <div class="org-col"><a class="org-node" href="#capta"><span class="mono org-code">VND</span><b>Vendas</b><ul><li>Atende no WhatsApp, 24h</li><li>Qualifica e marca na agenda</li><li>Faz o follow-up de quem sumiu</li><li>Prospecta clientes novos</li></ul><span class="org-who"><img src="img/agent-7.webp" alt="" width="40" height="50"><span>Davi</span></span></a></div>
+        <div class="org-col"><a class="org-node" href="#conteudo"><span class="mono org-code">CNT</span><b>Conteúdo</b><ul><li>Posts do Instagram e LinkedIn</li><li>Pronto todo dia às 7h</li><li>Você aprova, ela publica</li></ul><span class="org-who"><img src="img/agent-5.webp" alt="" width="40" height="50"><img src="img/agent-1.webp" alt="" width="40" height="50"><span>Jonathan e Juliana</span></span></a></div>
+        <div class="org-col"><a class="org-node" href="#criacao"><span class="mono org-code">WEB</span><b>Sites</b><ul><li>Sites e páginas de venda</li><li>No ar no mesmo dia</li></ul><span class="org-who"><img src="img/agent-1.webp" alt="" width="40" height="50"><img src="img/agent-4.webp" alt="" width="40" height="50"><span>Juliana e Clone do Rodrigo</span></span></a></div>
+        <div class="org-col"><a class="org-node" href="#bastidores"><span class="mono org-code">FIN</span><b>Financeiro</b><ul><li>Organiza contas</li><li>Avisa o que vence</li><li>Resumo do dia para você</li></ul></a></div>
+        <div class="org-col"><a class="org-node" href="#bastidores"><span class="mono org-code">SIS</span><b>Sistemas</b><ul><li>Sistema próprio sob medida</li><li>Você descreve, ela constrói</li></ul><span class="org-who"><img src="img/agent-4.webp" alt="" width="40" height="50"><span>Clone do Rodrigo</span></span></a></div>
+        <div class="org-col" hidden><a class="org-node" href="#equipe"><span class="mono org-code">TRF</span><b>Tráfego</b><ul><li>Anúncios e campanhas</li></ul><span class="org-who"><img src="img/agent-6.webp" alt="" width="40" height="50"><span>Paulo</span></span></a></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -229,10 +288,11 @@
       <h2 class="h-lg" id="capta-title" data-ply>O squad implantado <em>capta</em>, <em>conversa</em> e <em>converte</em> leads em venda.</h2>
       <p class="lead" data-ply>O squad não te entrega só uma ferramenta. É um <b>time inteiro de inteligência artificial</b> instalado e rodando na sua empresa, que capta, conversa e converte leads em venda. Você não opera ferramenta nenhuma: o squad cuida do processo e a GAIA te devolve o resultado.</p>
       <ul class="checks" data-ply>
-        <li><b>Captação:</b> prospecção ativa no Instagram, Google e LinkedIn, sem você levantar um dedo.</li>
-        <li><b>Conversa:</b> SDR de IA atende 24/7 no WhatsApp e nas redes, qualifica e agenda na hora.</li>
-        <li><b>Conversão:</b> follow-up infinito até o pagamento, nada esfria, nada se perde.</li>
-        <li><b>Acompanhamento:</b> a GAIA te mantém informado do que o squad fez e do que está pendente.</li>
+        <li><b>Atende no WhatsApp:</b> responde na hora, a qualquer hora, com a linguagem da sua empresa.</li>
+        <li><b>Qualifica e agenda:</b> entende o que o cliente precisa e marca o horário direto na agenda.</li>
+        <li><b>Follow-up:</b> retoma quem sumiu, sem deixar ninguém esfriar.</li>
+        <li><b>Até a venda:</b> leva cada lead pelo funil, etapa por etapa, até fechar.</li>
+        <li><b>Prospecção:</b> ainda busca clientes novos para você.</li>
       </ul>
       <div class="actions" data-ply><a class="btn btn-signal" href="#oferta">Quero o squad implantado <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></div>
     </div>
@@ -240,6 +300,47 @@
       <img src="img/funil.webp" alt="Rodrigo e GAIA movendo um lead pelas colunas do funil na parede de vidro" width="1536" height="1024" loading="lazy">
       <figcaption class="callout" style="--cx:23%;--cy:37%;--lx:3%;--ly:76%"><span class="mono">Squad em operação</span>Capta, conversa e converte por você, 24 horas por dia.</figcaption>
     </figure>
+  </div>
+  <div class="wrap">
+    <h3 class="steps-title" data-ply>O caminho de cada lead até a venda</h3>
+    <ol class="funnel" data-ply aria-label="Etapas do funil de vendas conduzido pela agente">
+      <li style="--k:0"><span class="mono">01</span><b>Prospecta</b><span>Encontra clientes novos</span></li>
+      <li style="--k:1"><span class="mono">02</span><b>Atende</b><span>Responde no WhatsApp na hora</span></li>
+      <li style="--k:2"><span class="mono">03</span><b>Qualifica</b><span>Entende o que o cliente precisa</span></li>
+      <li style="--k:3"><span class="mono">04</span><b>Agenda</b><span>Marca o horário direto na agenda</span></li>
+      <li style="--k:4"><span class="mono">05</span><b>Follow-up</b><span>Retoma quem sumiu</span></li>
+      <li style="--k:5"><span class="mono">06</span><b>Venda</b><span>Leva o lead até fechar</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ CONTEÚDO ============ -->
+<section class="sec sec-deep" id="conteudo" aria-labelledby="ct-title">
+  <div class="wrap">
+    <div class="cmp-head">
+      <h2 class="h-xl" id="ct-title" data-ply>Seu conteúdo pronto <em>todo dia às 7h</em>.</h2>
+      <p class="lead" data-ply>A agente de conteúdo já sabe o que você quer comunicar. Ela cria o texto e o visual dos posts do Instagram e do LinkedIn e te manda para aprovar. Você aprova, ela agenda e publica sozinha.</p>
+    </div>
+    <div class="ct-grid">
+      <div class="cycle ply" id="cycle" data-ply role="img" aria-label="Ciclo diário: às 7h a agente cria o conteúdo, cria o visual do card, te manda para aprovar, você aprova e ela agenda e publica no Instagram e no LinkedIn.">
+        <svg class="cy-ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="38"/><circle class="cy-arc" cx="50" cy="50" r="38" pathLength="100"/></svg>
+        <div class="cy-center"><span class="mono">Todo dia</span><b>07:00</b></div>
+        <div class="cy-node" style="--a:0"><span class="mono">01</span><b>Cria o conteúdo</b><span>Texto pensado para o seu público</span></div>
+        <div class="cy-node" style="--a:72"><span class="mono">02</span><b>Cria o visual</b><span>O card pronto, na sua identidade</span></div>
+        <div class="cy-node" style="--a:144"><span class="mono">03</span><b>Te manda para aprovar</b><span>No Telegram</span></div>
+        <div class="cy-node" style="--a:216"><span class="mono">04</span><b>Você aprova</b><span>Ou pede um ajuste</span></div>
+        <div class="cy-node" style="--a:288"><span class="mono">05</span><b>Agenda e publica</b><span>Instagram e LinkedIn</span></div>
+      </div>
+      <div class="ct-side">
+        <figure class="frame" data-ply>
+          <img src="img/conteudo.webp" alt="Rodrigo aprovando no celular um post criado pela agente, com os cards de conteúdo na parede de vidro" width="1536" height="1024" loading="lazy">
+        </figure>
+        <blockquote class="quote" data-ply>
+          <p>"Hoje eu não preciso mais pensar no conteúdo, nem criar, nem postar. Ele já sabe o que eu quero, cria, me manda para aprovar e, depois que eu aprovo, publica sozinho."</p>
+          <cite class="mono">Rodrigo Muccini · sobre a própria operação</cite>
+        </blockquote>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -261,7 +362,7 @@
   <div class="wrap duo duo-rev">
     <div class="duo-txt">
       <h2 class="h-lg" id="tg-title" data-ply>Interação <em>aberta e direta</em> pelo Telegram.</h2>
-      <p class="lead" data-ply>Você fala com a GAIA como falaria com uma gerente: por texto ou por áudio, direto no Telegram. Ela recebe o pedido, aciona o time e devolve cada entrega revisada, sem painel para aprender e sem fila de atendimento no meio.</p>
+      <p class="lead" data-ply>Você fala com a GAIA como falaria com uma gerente: por texto ou por áudio, direto no Telegram ou no WhatsApp. Ela recebe o pedido, aciona o time e devolve cada entrega revisada, sem painel para aprender e sem fila de atendimento no meio.</p>
       <ul class="checks" data-ply>
         <li>Conversa por texto ou áudio, no aplicativo que você já usa.</li>
         <li>Um único ponto de contato: a GAIA aciona os especialistas por você.</li>
@@ -287,6 +388,50 @@
     <figure class="frame" data-ply>
       <img src="img/criacao.webp" alt="GAIA e Rodrigo organizando layouts de site e molduras de imagem na parede de vidro" width="1536" height="1024" loading="lazy">
     </figure>
+  </div>
+</section>
+
+<!-- ============ BASTIDORES: FINANCEIRO E SISTEMAS ============ -->
+<section class="sec" id="bastidores" aria-labelledby="bs-title">
+  <div class="wrap">
+    <div class="cmp-head">
+      <h2 class="h-xl" id="bs-title" data-ply>Ela também cuida do que <em>ninguém vê</em>.</h2>
+      <p class="lead" data-ply>Além de vender e criar, a GAIA organiza o financeiro da empresa e, se você precisar, constrói um sistema próprio para resolver um problema do seu negócio.</p>
+    </div>
+    <div class="bs-grid">
+      <div class="bs-card" data-ply>
+        <h3>Financeiro em dia</h3>
+        <p>Organiza contas a pagar e a receber, avisa o que vai vencer e te manda o resumo do dia.</p>
+        <div class="console ply">
+          <div class="console-bar mono"><span>GAIA · resumo do dia · 18h00</span><span class="demo">Demonstração</span></div>
+          <div class="tg">
+            <p class="tg-msg"><b>Boa noite! Aqui está o resumo de hoje:</b></p>
+            <ul class="tg-list">
+              <li><span class="mono st st-ok">Recebido</span>2 pagamentos de clientes</li>
+              <li><span class="mono st st-go">Vence amanhã</span>3 contas: aluguel, internet e fornecedor</li>
+              <li><span class="mono st st-go">Em atraso</span>1 boleto de cliente, lembrete já enviado</li>
+              <li><span class="mono st st-ok">Agenda</span>4 reuniões marcadas para amanhã</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bs-card" data-ply>
+        <h3>Um sistema só seu</h3>
+        <p>Precisa de um sistema para resolver uma questão da empresa? Você pede. A GAIA faz algumas perguntas pelo Telegram ou pelo WhatsApp, constrói e entrega pronto.</p>
+        <div class="console ply" id="build">
+          <div class="console-bar mono"><span>Telegram · conversa com a GAIA</span><span class="demo">Demonstração</span></div>
+          <ol class="chat chat-sm">
+            <li class="msg out-you">GAIA, preciso de um sistema para controlar os pedidos dos clientes.</li>
+            <li class="msg in-gaia">Certo. Quem vai usar: só você ou a equipe também?</li>
+            <li class="msg out-you">A equipe, pelo celular.</li>
+            <li class="msg in-gaia">Entendido. Por quais etapas o pedido passa até a entrega?</li>
+          </ol>
+          <ol class="build-steps mono" aria-label="Etapas da construção">
+            <li data-b="0">Pedido</li><li data-b="1">Perguntas</li><li data-b="2">Construção</li><li data-b="3">Entregue</li>
+          </ol>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -384,6 +529,27 @@
     </div>
     <p class="save-line" data-ply>Economia de <b>R$ 14.500 por mês</b> e mais de <b>R$ 170.000 por ano</b>.</p>
     <div class="actions actions-center" data-ply><a class="btn btn-signal" href="#oferta">Ver quanto posso economizar <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ============ SOB MEDIDA ============ -->
+<section class="sec sec-deep" id="sob-medida" aria-labelledby="sm-title">
+  <div class="wrap duo">
+    <div class="duo-txt">
+      <h2 class="h-lg" id="sm-title" data-ply>Não é pacote pronto. É uma agente <em>feita para a sua empresa</em>.</h2>
+      <p class="lead" data-ply>Rodrigo senta com você, entende onde a sua empresa está perdendo tempo e dinheiro e entrega uma agente exclusiva, construída em cima da sua realidade.</p>
+      <ol class="sm-steps" data-ply>
+        <li><span class="mono">01</span><b>Conversa</b><span>Você conta a sua dor e onde estão o tempo e o dinheiro que escapam.</span></li>
+        <li><span class="mono">02</span><b>Desenho</b><span>Definimos o que a sua agente vai fazer, com a sua linguagem e o seu conhecimento.</span></li>
+        <li><span class="mono">03</span><b>Implantação</b><span>A agente é construída e conectada ao seu WhatsApp, ao Telegram e à sua agenda.</span></li>
+        <li><span class="mono">04</span><b>Trabalhando</b><span>Uma agente exclusiva cuidando da sua empresa, 24 horas por dia.</span></li>
+      </ol>
+      <div class="actions" data-ply><a class="btn btn-signal" href="#oferta">Quero conversar sobre a minha empresa <svg class="ico" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a></div>
+    </div>
+    <figure class="frame" data-ply>
+      <img src="img/sob-medida.webp" alt="Rodrigo conversando com um empresário diante de um mapa de processos projetado no vidro" width="1536" height="1024" loading="lazy">
+      <figcaption class="callout" style="--cx:49%;--cy:61%;--lx:3%;--ly:4%"><span class="mono">Diagnóstico</span>Onde a sua empresa perde tempo e dinheiro.</figcaption>
+    </figure>
   </div>
 </section>
 
