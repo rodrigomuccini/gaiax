@@ -14,8 +14,8 @@
     gaia: {
       name: 'GAIA', role: 'Agente central · orquestradora', photo: 'img/gaia-full.webp',
       resumo: 'A gerente da sua operação de IA e o centro de comando do time. Recebe o pedido em português, planeja, delega ao especialista certo, valida e te entrega pronto.',
-      does: ['Orquestra o time inteiro: copy, código, design, tráfego e vendas.', 'Conversa com você por texto ou áudio e devolve cada entrega revisada.', 'Cuida das campanhas, dos funis de venda e do atendimento.'],
-      chips: ['Telegram', 'WhatsApp', 'Instagram', 'Meta Ads'],
+      does: ['Orquestra o time inteiro: copy, código, design e vendas.', 'Conversa com você por texto ou áudio e devolve cada entrega revisada.', 'Cuida dos funis de venda e do atendimento.'],
+      chips: ['Telegram', 'WhatsApp', 'Instagram'],
       fluxo: 'Seu ponto único de contato: aciona os especialistas e garante que tudo volte revisado.'
     },
     juliana: {
@@ -44,7 +44,7 @@
       resumo: 'O redator e pesquisador do time. Escreve tudo com intenção de venda e pesquisa cada referência antes.',
       does: ['Escreve cartas e páginas de venda.', 'Cria roteiros de anúncio e de Reels.', 'Produz posts, carrossel e sequências de e-mail com base em pesquisa.'],
       chips: ['Instagram', 'E-mail'],
-      fluxo: 'Recebe o briefing, pesquisa, escreve e abastece os anúncios com a copy certa.'
+      fluxo: 'Recebe o briefing, pesquisa, escreve e entrega a copy certa.'
     },
     paulo: {
       name: 'Paulo', role: 'Gestor de tráfego', photo: 'img/agent-6.webp',
@@ -58,7 +58,7 @@
       resumo: 'O líder do squad de vendas e vendedor de WhatsApp. Conduz a conversa do primeiro contato até o agendamento.',
       does: ['Faz o primeiro contato e qualifica com método consultivo.', 'Responde objeção e faz o acompanhamento.', 'Agenda a reunião e coordena o squad de vendas.'],
       chips: ['WhatsApp', 'Calendários'],
-      fluxo: 'Recebe o lead do tráfego, aquece pelo WhatsApp e entrega agendado ao comercial.'
+      fluxo: 'Recebe o contato, aquece pelo WhatsApp e entrega agendado ao comercial.'
     }
   };
 
@@ -89,7 +89,7 @@
 
   /* ---------- a parede: faixa curva arrastável ---------- */
   var wall = document.getElementById('wall');
-  var agents = wall ? Array.prototype.slice.call(wall.querySelectorAll('.agent')) : [];
+  var agents = wall ? Array.prototype.slice.call(wall.querySelectorAll('.agent:not([hidden])')) : [];
   /* posições medidas do comp aprovado (px de 1672x941), por distância do foco */
   var SLOTS = [
     { d: -3, x: 230, y: 330, w: 130, h: 450, o: 0 },
@@ -118,7 +118,7 @@
       return;
     }
     agents.forEach(function (el, i) {
-      var n = agents.length, d = ((i - focus + 2.5) % n + n) % n - 2.5, s = slotAt(d), ad = Math.abs(d);
+      var n = agents.length, d = ((i - focus + 2.5) % n + n) % n - 2.5, s = slotAt(n < 7 && d > 0 ? d * 4 / (n - 3) : d), ad = Math.abs(d);
       var fade = Math.max(0, Math.min(1, (d + 2.5) / 0.5)) * Math.max(0, Math.min(1, (4.5 - d) / 0.5));
       el.style.setProperty('--x', (s.x / 16.72) + '%');
       el.style.setProperty('--y', (s.y / 9.41) + '%');
@@ -401,7 +401,8 @@
     var node = function (n) { return flow.querySelector('[data-n="' + n + '"]'); };
     var steps = document.querySelectorAll('.steps li[data-step]'), tabs = document.querySelectorAll('.fl-tab');
     var lines = { yg: null, ga: {}, ao: {}, ret: null }, pulses = {};
-    var AG = ['juliana', 'jonathan', 'paulo', 'davi', 'clone', 'rafael'];
+    var AG = ['juliana', 'jonathan', 'paulo', 'davi', 'clone', 'rafael'].filter(function (a) { return !node(a).hidden; });
+    CASES.forEach(function (c) { c.ok = c.who.every(function (a) { return !node(a).hidden; }); });
     function mk(cls, d) { var p = document.createElementNS(NS, 'path'); p.setAttribute('class', cls); if (d) p.setAttribute('d', d); svg.appendChild(p); return p; }
     function curve(x1, y1, x2, y2) { var dx = Math.abs(x2 - x1) * 0.5; return 'M' + x1 + ' ' + y1 + ' C' + (x1 + dx) + ' ' + y1 + ' ' + (x2 - dx) + ' ' + y2 + ' ' + x2 + ' ' + y2; }
     function draw() {
@@ -440,7 +441,7 @@
     function tick() {
       if (document.hidden) return;
       show(cur, phase);
-      phase++; if (phase > 4) { phase = 0; if (auto) cur = (cur + 1) % CASES.length; }
+      phase++; if (phase > 4) { phase = 0; if (auto) { do { cur = (cur + 1) % CASES.length; } while (!CASES[cur].ok); } }
     }
     function start() { clearInterval(timer); phase = 0; show(cur, 0); phase = 1; timer = setInterval(tick, 1500); }
     tabs.forEach(function (t, k) { t.addEventListener('click', function () { cur = k; auto = false; start(); }); });
@@ -462,10 +463,11 @@
       ['08:15', 'Jonathan', 'Escreveu o roteiro do anúncio da semana'],
       ['09:40', 'Juliana', 'Montou a página da campanha de sexta'],
       ['10:05', 'Clone do Rodrigo', 'Publicou o site no ar'],
-      ['11:30', 'Paulo', 'Subiu os criativos e ajustou o custo por lead'],
+      ['11:30', 'Paulo', 'Subiu os criativos e ajustou o custo por lead', 'paulo'],
       ['12:10', 'Rafael', 'Atualizou o cronograma das entregas'],
       ['12:45', 'GAIA', 'Revisou tudo e enviou o resumo no Telegram']
     ];
+    TASKS = TASKS.filter(function (t) { return !(t[3] && document.querySelector('.agent[data-agent="' + t[3] + '"][hidden]')); });
     var feedN = 0, feedStarted = false;
     function feedStep() {
       if (document.hidden) return;
