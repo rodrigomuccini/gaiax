@@ -143,6 +143,9 @@ html{scrollbar-color:var(--steel) var(--void);scrollbar-width:thin;}
   .glove.grab .glove-ring{transform:scale(.66);border-color:#fff;background:rgba(168,220,255,.18);}
   .glove-trail{display:block;position:fixed;inset:0;width:100vw;height:100vh;z-index:299;pointer-events:none;}
   html.gloved, html.gloved *{cursor:none !important;}
+  html.gloved.dlg-open, html.gloved.dlg-open *{cursor:auto !important;}
+  html.gloved.dlg-open .ds-close{cursor:pointer !important;}
+  html.dlg-open .glove, html.dlg-open .glove-trail{visibility:hidden;}
 }
 
 /* ================= HERO ================= */

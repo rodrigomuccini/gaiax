@@ -76,11 +76,16 @@
     var ph = document.getElementById('dsPhoto'); ph.src = d.photo; ph.alt = d.name;
     fillList(document.getElementById('dsDoes'), d.does);
     fillList(document.getElementById('dsChips'), d.chips);
+    /* com a janela aberta, o cursor normal volta: a luva fica por trás da camada da janela */
+    root.classList.add('dlg-open');
     if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
   }
   if (dlg) {
+    var dlgDone = function () { root.classList.remove('dlg-open'); };
+    dlg.addEventListener('close', dlgDone);
+    dlg.addEventListener('cancel', dlgDone);
     dlg.addEventListener('click', function (e) {
-      if (e.target === dlg || e.target.closest('[data-close]')) dlg.close();
+      if (e.target === dlg || e.target.closest('[data-close]')) { dlg.close(); dlgDone(); }
     });
   }
   document.querySelectorAll('[data-open]').forEach(function (b) {
